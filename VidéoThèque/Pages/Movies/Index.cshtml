@@ -1,15 +1,24 @@
-﻿@page
+@page
 @model VidéoThèque.Pages.Movies.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index des films";
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Ajouter un film</a>
 </p>
+<form>
+    <p>
+        Par type: <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        Titre recherché: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filtrer" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -25,10 +34,20 @@
             <th>
                 @Html.DisplayNameFor(model => model.Movie[0].Price)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Realisateur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Acteurs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Synopsis)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+<!-- Pour chaque items dans la liste de film on affiche leur titre, date, genre et le prix -->
 @foreach (var item in Model.Movie) {
         <tr>
             <td>
@@ -44,9 +63,19 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                @Html.DisplayFor(modelItem => item.Realisateur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acteurs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Synopsis)
+            </td>
+            <td>
+                <!-- Les routes -->
+                <a asp-page="./Edit" asp-route-id="@item.ID">Éditer</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Voir les détails</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Supprimer</a>
             </td>
         </tr>
 }

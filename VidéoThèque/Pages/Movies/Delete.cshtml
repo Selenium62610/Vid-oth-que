@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model VidéoThèque.Pages.Movies.DeleteModel
 
 @{
@@ -35,6 +35,24 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Movie.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.Realisateur)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Realisateur)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.Acteurs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Acteurs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.Synopsis)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Synopsis)
         </dd>
     </dl>
     

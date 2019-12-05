@@ -40,14 +40,29 @@
                 <span asp-validation-for="Movie.Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Movie.Realisateur" class="control-label"></label>
+                <input asp-for="Movie.Realisateur" class="form-control" />
+                <span asp-validation-for="Movie.Realisateur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Acteurs" class="control-label"></label>
+                <input asp-for="Movie.Acteurs" class="form-control" />
+                <span asp-validation-for="Movie.Acteurs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Synopsis" class="control-label"></label>
+                <input asp-for="Movie.Synopsis" class="form-control" />
+                <span asp-validation-for="Movie.Synopsis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Créer" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Retourner à l'index</a>
 </div>
 
 @section Scripts {
