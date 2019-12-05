@@ -26,7 +26,8 @@ namespace VidéoThèque
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
+            // Inscription du contexte de base de données. 
+            //L'objet VidéoThèqueContext gère la tâche de connexion à la base de données
             services.AddDbContext<VidéoThèqueContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VidéoThèqueContext")));
         }

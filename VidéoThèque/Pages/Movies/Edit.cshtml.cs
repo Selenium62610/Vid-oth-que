@@ -13,16 +13,20 @@ namespace VidéoThèque.Pages.Movies
 {
     public class EditModel : PageModel
     {
+        // Déclaration d'un VidéoThèqueContext
         private readonly VidéoThèque.Models.VidéoThèqueContext _context;
 
+        // Constructeur
         public EditModel(VidéoThèque.Models.VidéoThèqueContext context)
         {
             _context = context;
         }
 
+        //Déclaration de la propriété obligatoire Movie
         [BindProperty]
         public Movie Movie { get; set; }
 
+        //Gestion de l'accès à la page Edit et extraction du film de la bdd si c'est possible
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -41,6 +45,7 @@ namespace VidéoThèque.Pages.Movies
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
+        // Edition du film s'il existe dans la bdd
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -69,6 +74,7 @@ namespace VidéoThèque.Pages.Movies
             return RedirectToPage("./Index");
         }
 
+        // Renvoie true si le film est dans la bdd
         private bool MovieExists(int id)
         {
             return _context.Movie.Any(e => e.ID == id);

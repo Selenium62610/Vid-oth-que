@@ -17,23 +17,25 @@ namespace VidéoThèque
     {
         public static void Main(string[] args)
         {
+            //Création d'un host (responsable de la gestion du démarrage et de la durée de vie de l'appli)
             var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-
                 try
                 {
+                    //instance de contexte de base de données à partir du conteneur d’injection de dépendances
                     var context = services.
                         GetRequiredService<VidéoThèqueContext>();
                     context.Database.Migrate(); 
+                    //appel de la méthode de remplissage de la bdd
                     SeedData.Initialize(services);
                 }
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred seeding the DB.");
+                    logger.LogError(ex, "Une erreur empêche l'ajout à la bdd.");
                 }
             }
 

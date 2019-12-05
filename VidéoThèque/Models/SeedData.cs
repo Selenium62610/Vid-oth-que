@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace VidéoThèque.Models
 {
+    //Cette classe représente le début de la base de données qui contiendra les films
     public static class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
@@ -14,12 +15,13 @@ namespace VidéoThèque.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<VidéoThèqueContext>>()))
             {
-                // Look for any movies.
+                //Si la base de données contient des films
                 if (context.Movie.Any())
                 {
-                    return;   // DB has been seeded
-                }
+                    return;   // Aucun film n’est ajouté à la bdd
 
+                }
+                //Sinon les films suivants sont ajoutés
                 context.Movie.AddRange(
                     new Movie
                     {

@@ -13,8 +13,10 @@ namespace VidéoThèque.Pages.Movies
 {
     public class IndexModel : PageModel
     {
+        // Déclaration d'un VidéoThèqueContext
         private readonly VidéoThèque.Models.VidéoThèqueContext _context;
 
+        // Constructeur
         public IndexModel(VidéoThèque.Models.VidéoThèqueContext context)
         {
             _context = context;

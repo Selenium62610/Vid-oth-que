@@ -9,16 +9,20 @@ namespace VidéoThèque.Pages.Movies
 {
     public class DeleteModel : PageModel
     {
+        // Déclaration d'un VidéoThèqueContext
         private readonly VidéoThèque.Models.VidéoThèqueContext _context;
 
+        // Constructeur
         public DeleteModel(VidéoThèque.Models.VidéoThèqueContext context)
         {
             _context = context;
         }
 
+        //Déclaration de la propriété obligatoire Movie
         [BindProperty]
         public Movie Movie { get; set; }
 
+        //Gestion de l'accès à la page Delete et extraction du film de la bdd si c'est possible
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -35,6 +39,7 @@ namespace VidéoThèque.Pages.Movies
             return Page();
         }
 
+        //Suppression d'un film s'il est dans la bdd
         public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (id == null)
