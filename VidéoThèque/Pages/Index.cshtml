@@ -4,18 +4,24 @@
     ViewData["Title"] = "Accueil";
 }
 
-    <div class="text-center">
-        <h1 class="display-4">Bienvenu</h1>
-        <p> faire la page de login ici peut être</p>
-        <a class="btn btn-primary btn-lg" onclick="test()" role="button">Stateful button</a>
-
-        <script>
-            function test() {
-                console.log("test");
-            }
-        </script>
-
-
-    </div>
-
+<body>
+  <form method="post">
+    <fieldset>
+      <legend>Connexion</legend>
+      <div>
+         <label for="pseudo">Identifiant:</label>
+         <input type="text" name="pseudo" value="" />
+         @Html.ValidationMessage("pseudo")
+      </div>
+      <div>
+         <label for="password">Mot de passe:</label>
+         <input type="text" name="password" value="" />
+         @Html.ValidationMessage("password")
+      </div>
+      <div>
+         <input type="submit" value="Se connecter" class="btn-primary" />
+      </div>
+    </fieldset>
+  </form>
+</body>
 

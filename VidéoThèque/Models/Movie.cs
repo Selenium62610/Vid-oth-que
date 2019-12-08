@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RazorPagesMovie.Models
+namespace VidéoThèque.Models
 {
     public class Movie
     {
@@ -14,7 +14,7 @@ namespace RazorPagesMovie.Models
 
         //Interdit d'entrer un titre contenant moins de 3 lettres et plus de 60 caractères
         [StringLength(60, MinimumLength = 3)]
-        [Required(ErrorMessage = "Un titre est requis, il doit contenir moins de 3 lettres et plus de 60 caractères.")]
+        [Required(ErrorMessage = "Un titre est requis, il doit contenir au moins 3 lettres et pas plus de 60 caractères.")]
         [Display(Name = "Titre")]
         public string Title { get; set; }
 
