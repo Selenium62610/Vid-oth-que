@@ -31,6 +31,7 @@ namespace VidéoThèque
                     context.Database.Migrate(); 
                     //appel de la méthode de remplissage de la bdd
                     SeedData.Initialize(services);
+                    UserData.Initialize(services);
                 }
                 catch (Exception ex)
                 {

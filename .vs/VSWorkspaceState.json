@@ -2,15 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\VidéoThèque",
-    "\\VidéoThèque\\Data",
-    "\\VidéoThèque\\obj\\Debug",
-    "\\VidéoThèque\\obj\\Debug\\netcoreapp3.0",
-    "\\VidéoThèque\\obj\\Debug\\netcoreapp3.0\\Razor",
-    "\\VidéoThèque\\obj\\Debug\\netcoreapp3.0\\Razor\\Pages",
-    "\\VidéoThèque\\obj\\Debug\\netcoreapp3.0\\Razor\\Pages\\Movies",
-    "\\VidéoThèque\\Pages\\Movies",
+    "\\VidéoThèque\\Models",
+    "\\VidéoThèque\\Pages",
     "\\VidéoThèque\\Pages\\Users"
   ],
-  "SelectedNode": "\\VidéoThèque\\obj",
+  "SelectedNode": "\\VidéoThèque\\Models\\SeedData.cs",
   "PreviewInSolutionExplorer": false
 }

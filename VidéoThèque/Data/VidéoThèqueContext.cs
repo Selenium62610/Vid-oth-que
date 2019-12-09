@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace VidéoThèque.Models
 {
+    // spécifie les entités qui sont incluses dans le modèle de données
     public class VidéoThèqueContext : DbContext
     {
         public VidéoThèqueContext (DbContextOptions<VidéoThèqueContext> options)

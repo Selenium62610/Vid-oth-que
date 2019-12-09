@@ -252,6 +252,7 @@ C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Privacy.cshtml.g.cs
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Users\Inscription.cshtml.g.cs
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.RazorTargetAssemblyInfo.cache
@@ -260,4 +261,3 @@ C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.csproj.CopyComplete
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.dll
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.pdb
-C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Users\Inscription.cshtml.g.cs

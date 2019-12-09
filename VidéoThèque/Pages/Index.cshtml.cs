@@ -11,7 +11,7 @@ namespace VidéoThèque.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+       /* private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -21,7 +21,18 @@ namespace VidéoThèque.Pages
         public void OnGet()
         {
 
+        }*/
+
+       /* private User user;
+
+        public User GetUser()
+        {
+            return user;
         }
-        public User User { get; set; }
+
+        public void SetUser(User value)
+        {
+            user = value;
+        }*/
     }
 }
