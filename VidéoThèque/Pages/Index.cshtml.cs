@@ -24,38 +24,60 @@ namespace VidéoThèque.Pages
             _context = context;
         }
 
-        //Permet la recherche par nom et par Genre
+        //Permet la recherche par Identifiant et Mot de passe 
         public IList<User> User { get; set; }
 
+        //Lit la valeur du Mot de passe du formulaire
         [BindProperty(SupportsGet = true)]
-        //Contient le texte de l'utilisateur entrée dans la zone de recherche
+        //Champs obligatoire
+        
         [Required(ErrorMessage = "Un identifiant est requis.")]
+        //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchIdentifiant { get; set; }
 
+        //Lit la valeur du Mot de passe du formulaire
         [BindProperty(SupportsGet = true)]
+        //Champs obligatoire
         [Required(ErrorMessage = "Un mot de passe est requis.")]
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchMdp { get; set; }
 
-        
-        
 
 
-
-        //Parmis tout les films on recherche celui qui contiens le même titre que celui dans la barre de recherche
+        //Parmis tout les utilisateurs on recherche celui qui contient les mêmes identifiants et mot de passe que celui dans la barre de recherche (s'il existe)
         public async Task OnGetAsync()
         {
             //Récupère tout les gens de la liste  
             var users = from u in _context.User select u;
 
-                //Si la requête n'est pas nul (SearchString) la requête sur les film est modifié on affiche telle type de film
+            //Si les champs Identifiants et Mot de Passe ne sont pas nuls
             if (!string.IsNullOrEmpty(SearchIdentifiant) && !string.IsNullOrEmpty(SearchMdp)){
-                users = users.Where(s => SearchIdentifiant==s.Identifiant);
-                users = users.Where(s => SearchMdp == s.MotDePasse);
-            }
-            //On affiche la requête si elle est modifié, tout les films sinon.
-            User = await users.ToListAsync();
-        }
+                // Si l'utilisateur est l'admin
+                if (SearchIdentifiant == "Admin" && SearchMdp == "Admin")
+                {
+                    //Redirection vers la page d'accueil de l'admin
+                    Response.Redirect("./Movies/Index");
 
+                }
+                // Sinon on regarde s'il est dans la bdd User
+                else
+                {
+                    users = users.Where(s => SearchIdentifiant == s.Identifiant);
+                    users = users.Where(s => SearchMdp == s.MotDePasse);
+                    // S'il n'y a pas d'utilisateurs avec ces identifiant et mot de passe
+                    if (users.Count() == 0)
+                    {
+                        //Redirection vers la page d'inscription
+                        Response.Redirect("./Users/Inscription");
+
+                    }
+                    // Sinon redirection vers page d'accueil client 
+                    else
+                    {
+                        Response.Redirect("./Privacy");
+                    }
+                }
+            }    
+        }
     }
 }
