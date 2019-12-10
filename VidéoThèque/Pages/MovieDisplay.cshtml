@@ -1,0 +1,46 @@
+@page
+@model VidéoThèque.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Movie Display";
+}
+
+<h1>Liste des films disponible</h1>
+
+<form>
+    <p>
+        Par type: <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        Titre recherché: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filtrer" />
+    </p>
+</form>
+<table class="table">
+    <tbody>
+
+        @foreach (var item in Model.Movie)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content("~/img/"+item.Image+".PNG")" height="250px" width="200px" alt="Image" />
+                    <!--Mettre à jour ici pour utiliser les noms présent dans la BDD-->
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                
+                <td>
+                    <!-- Les routes -->
+                    <a asp-page="./Movies/DetailsForClient" asp-route-id="@item.ID">Voir les détails</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

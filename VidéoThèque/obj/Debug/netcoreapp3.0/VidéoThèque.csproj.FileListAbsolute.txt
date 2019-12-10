@@ -260,3 +260,5 @@ C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.csproj.CopyComplete
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.dll
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.pdb
+C:\Users\Edouard\source\repos\VidéoThèque\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\MovieDisplay.cshtml.g.cs
+C:\Users\Edouard\source\repos\VidéoThèque\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Movies\DetailsForClient.cshtml.g.cs

@@ -9,7 +9,6 @@
 
 <hr />
 @{
-    var newFileName = "";
     var imagePath = "";
 }
 <!DOCTYPE html>
@@ -50,6 +49,7 @@
                 <label asp-for="Movie.Image" class="control-label"></label>
                 <input asp-for="Movie.Image" class="form-control" />
                 <span asp-validation-for="Movie.Image" class="text-danger"></span>
+                <img src="@Url.Content("~/img/"+Model.Movie.Image+".PNG")" height="250px" width="200px" alt="Image" />
             </div>
 
 

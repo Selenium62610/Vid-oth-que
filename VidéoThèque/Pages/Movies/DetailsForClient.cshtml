@@ -1,15 +1,14 @@
 @page
-@model VidéoThèque.Pages.Movies.DeleteModel
+@model VidéoThèque.Pages.Movies.DetailsModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Détails du film";
 }
 
-<h1>Delete</h1>
+<h1>Détails</h1>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Movie</h4>
+    <h4>Du film</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -61,10 +60,8 @@
             @Html.DisplayFor(model => model.Movie.Synopsis)
         </dd>
     </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Movie.ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+</div>
+<div>
+    <a asp-page="../MovieDisplay">Retourner au choix des films</a>
+    <button> Louer ce film </button>
 </div>
