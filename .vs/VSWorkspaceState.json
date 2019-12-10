@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\VidéoThèque",
+    "\\VidéoThèque\\Migrations",
     "\\VidéoThèque\\Models",
     "\\VidéoThèque\\Pages",
     "\\VidéoThèque\\Pages\\Users"
