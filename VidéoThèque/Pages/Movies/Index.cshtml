@@ -22,6 +22,10 @@
 <table class="table">
     <thead>
         <tr>
+            <!-- Affichage des différents champs qui seront affichés (les titre en gros) -->
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Image)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movie[0].Title)
             </th>
@@ -47,37 +51,43 @@
         </tr>
     </thead>
     <tbody>
-<!-- Pour chaque items dans la liste de film on affiche leur titre, date, genre et le prix -->
-@foreach (var item in Model.Movie) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Realisateur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Acteurs)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Synopsis)
-            </td>
-            <td>
-                <!-- Les routes -->
-                <a asp-page="./Edit" asp-route-id="@item.ID">Éditer</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Voir les détails</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Supprimer</a>
-            </td>
-        </tr>
-}
+
+        <!-- Pour chaque items dans la liste de film on affiche leur titre, date, genre et le prix -->
+        @foreach (var item in Model.Movie)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content("~/img/"+item.Image+".PNG")" alt="Image" />
+                    <!--Mettre à jour ici pour utiliser les noms présent dans la BDD-->
+                </td>
+                <td>    
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Realisateur)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Acteurs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Synopsis)
+                </td>
+                <td>
+                    <!-- Les routes -->
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Éditer</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Voir les détails</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Supprimer</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

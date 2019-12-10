@@ -25,6 +25,11 @@
                 <span asp-validation-for="Movie.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Movie.Image" class="control-label"></label>
+                <input asp-for="Movie.Image" class="form-control" />
+                <span asp-validation-for="Movie.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Movie.ReleaseDate" class="control-label"></label>
                 <input asp-for="Movie.ReleaseDate" class="form-control" />
                 <span asp-validation-for="Movie.ReleaseDate" class="text-danger"></span>

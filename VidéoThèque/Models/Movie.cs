@@ -40,7 +40,11 @@ namespace RazorPagesMovie.Models
 
         public string Acteurs { get; set; }
 
-
+        //Peut être une valeur nul
         public string Synopsis { get; set; }
+
+        //Le nom de l'image qui sera stocké dans ~/img/
+        [Display(Name = "Affiche du film")]
+        public string Image { get; set; }
     }
 }
