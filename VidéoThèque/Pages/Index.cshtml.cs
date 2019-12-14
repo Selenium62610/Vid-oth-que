@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using VidéoThèque.Models;
-using Xceed.Wpf.Toolkit;
+
 
 namespace VidéoThèque.Pages
 {
@@ -25,7 +25,7 @@ namespace VidéoThèque.Pages
         }
 
         //Permet la recherche par Identifiant et Mot de passe 
-        public IList<User> User { get; set; }
+        public new IList<User> User { get; set; }
 
         //Lit la valeur du Mot de passe du formulaire
         [BindProperty(SupportsGet = true)]
