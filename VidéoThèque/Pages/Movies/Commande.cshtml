@@ -1,81 +1,88 @@
 @page
-@model VidéoThèque.Pages.Movies.DetailsModel
+@model VidéoThèque.Pages.Movies.CommandeModel
 
 @{
     ViewData["Title"] = "Détail Commande";
 }
 
-<h1>Détails de la commande</h1>
-
-<div>
-    <h4>Récapitulatif</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Image)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Url.Content("~/img/"+Model.Movie.Image+".PNG")" height="250px" width="200px"
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.ReleaseDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.ReleaseDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Genre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Genre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Realisateur)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Realisateur)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Acteurs)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Acteurs)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Synopsis)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Synopsis)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Price)
-        </dd>
-
-    </dl>
-</div>
-
 <!DOCTYPE html>
 <html>
 <body>
 
+    <h1>Détails de la commande</h1>
+
+    <div>
+        <h4>Récapitulatif</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Image)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content("~/img/"+Model.Movie.Image+".PNG")" height="250px" width="200px"
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.ReleaseDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.ReleaseDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Genre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Genre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Realisateur)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Realisateur)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Acteurs)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Acteurs)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Synopsis)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Synopsis)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Price)
+            </dd>
+
+        </dl>
+    </div>
+
+
     <div class="col-md-10">
-        @Html.DropDownListFor(model => model.Movie.Price, new List<SelectListItem>
-                {
-                    new SelectListItem {Text = "24H", Value = "3.99", Selected = true },
-                    new SelectListItem {Text = "48", Value = "6.99" },
-                    new SelectListItem {Text = "64h", Value = "10.0" },
-                }, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Movie.Price, "", new { @class = "text-danger" })
+        <form method="post">
+            <input type="hidden" asp-for="Commande.IDmovie" value="@Model.Movie.ID" />
+
+            <select asp-for="Commande.dureeLocation" name="dureeLocation">
+                <option value="">Selectionner une durée de location</option>
+                <option value="24">24h soit 3.99€</option>
+                <option value="48">48h soit 6.99€</option>
+                <option value="64">72h soit 10.0€</option>
+            </select>
+            <div class="form-group">
+                <input type="submit" value="Accepter la commande" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 
     <!-- Gérer localement le changement de prix genre si SelectListItem change de valeur baaah on fait X2 u X3-->
@@ -85,7 +92,10 @@
 
 <div>
     <a asp-page="../MovieDisplay" asp-route-id="@Model.Movie.ID">Retourner au choix des films</a>
-    <button> Accepter la commande </button>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 
 

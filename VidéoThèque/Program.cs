@@ -32,6 +32,7 @@ namespace VidéoThèque
                     //appel de la méthode de remplissage de la bdd
                     SeedData.Initialize(services);
                     UserData.Initialize(services);
+                    CommandeData.Initialize(services);
                 }
                 catch (Exception ex)
                 {

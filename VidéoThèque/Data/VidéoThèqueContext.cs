@@ -14,5 +14,7 @@ namespace VidéoThèque.Models
 
         public DbSet<VidéoThèque.Models.User> User { get; set; }
 
+        public DbSet<VidéoThèque.Models.Commande> Commande { get; set; }
+
     }
 }

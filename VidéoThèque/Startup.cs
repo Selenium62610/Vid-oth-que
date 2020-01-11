@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using VidéoThèque.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace VidéoThèque
 {
@@ -30,6 +31,8 @@ namespace VidéoThèque
             //L'objet VidéoThèqueContext gère la tâche de connexion à la base de données
             services.AddDbContext<VidéoThèqueContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VidéoThèqueContext")));
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
