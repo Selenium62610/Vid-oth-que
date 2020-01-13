@@ -26,7 +26,9 @@ namespace VidéoThèque.Models
                     new Commande
                     {
                         IDmovie = 1,
-                        dureeLocation = 48
+                        dureeLocation = 48,
+                        IDuser = 1,
+                        dateLocation = DateTime.Parse("2019-4-15")
                     }
                 );
                 context.SaveChanges();

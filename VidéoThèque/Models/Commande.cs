@@ -16,13 +16,12 @@ namespace VidéoThèque.Models
 
         public int dureeLocation { get; set; }
 
+        public int IDuser { get; set; }
 
-        //public int IDLoueur;
+        public DateTime dateLocation
+        { get; set; }
 
-        //public long price;
 
-        //public DateTime dateLocation;
 
-        //public DateTime dateRetour;
     }
 }

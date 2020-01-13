@@ -72,7 +72,7 @@
     <div class="col-md-10">
         <form method="post">
             <input type="hidden" asp-for="Commande.IDmovie" value="@Model.Movie.ID" />
-
+            <input type="hidden" asp-for="Commande.dateLocation" value="@DateTime.Today" />
             <select asp-for="Commande.dureeLocation" name="dureeLocation">
                 <option value="">Selectionner une durée de location</option>
                 <option value="24">24h soit 3.99€</option>

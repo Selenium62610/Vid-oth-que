@@ -23,7 +23,7 @@ namespace VidéoThèque.Pages.Movies
         //Déclaration de la propriété obligatoire Movie
         public Movie Movie { get; set; }
 
-        public Commande Commande { get; set; }
+        public User User { get; set; }
 
         //Gestion de l'accès à la page Commande et extraction du film de la bdd si c'est possible
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -42,6 +42,10 @@ namespace VidéoThèque.Pages.Movies
 
             return Page();
         }
+
+        [BindProperty]
+        public Commande Commande { get; set; }
+
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         //Instructions de retour de la page 
@@ -52,7 +56,6 @@ namespace VidéoThèque.Pages.Movies
             {
                 return Page();
             }
-
             //Sinon on ajoute la commande
             _context.Commande.Add(Commande);
             await _context.SaveChangesAsync();
