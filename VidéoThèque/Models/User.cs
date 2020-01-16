@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -28,6 +28,9 @@ namespace VidéoThèque.Models
         [Display(Name = "Mot de passe")]
         [Required(ErrorMessage = "Un mot de passe est requis. Il vous servira lors de la connexion.")]
         public string MotDePasse { get; set; }
+
+        [Display(Name = "est un Admin")]
+        public Boolean isAdmin { get; set;  }
     }
 
 }

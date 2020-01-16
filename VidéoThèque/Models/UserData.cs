@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
@@ -29,7 +29,27 @@ namespace VidéoThèque.Models
                         Prenom = "Admin",
                         DateDeNaissance = DateTime.Parse("1989-2-12"),
                         Identifiant = "Admin",
-                        MotDePasse = "Admin"
+                        MotDePasse = "Admin",
+                        isAdmin = true
+                    },
+
+                    new User
+                    {
+                        Nom = "GRIMARD",
+                        Prenom = "Bettino",
+                        DateDeNaissance = DateTime.Parse("1989-2-12"),
+                        Identifiant = "Bettino",
+                        MotDePasse = "azerty123",
+                        isAdmin = true
+                    },
+                    new User
+                    {
+                        Nom = "DELATTRE",
+                        Prenom = "Edouard",
+                        DateDeNaissance = DateTime.Parse("1997-1-25"),
+                        Identifiant = "Sélénium",
+                        MotDePasse = "azerty123",
+                        isAdmin = false
                     }
                 ); 
                 context.SaveChanges();
