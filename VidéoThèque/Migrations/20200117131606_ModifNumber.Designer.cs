@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VidéoThèque.Models;
 
 namespace VidéoThèque.Migrations
 {
     [DbContext(typeof(VidéoThèqueContext))]
-    partial class VidéoThèqueContextModelSnapshot : ModelSnapshot
+    [Migration("20200117131606_ModifNumber")]
+    partial class ModifNumber
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,8 +61,8 @@ namespace VidéoThèque.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NbLocation")
-                        .HasColumnType("int");
+                    b.Property<decimal>("NbLocation")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");

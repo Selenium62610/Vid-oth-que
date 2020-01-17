@@ -31,7 +31,7 @@ namespace VidéoThèque.Models
                         Realisateur = "Test",
                         Acteurs = "De Niro",
                         Synopsis = "La rencontre de deux personnes",
-                        NbLocation = 2
+                        NbLocation = 2,
 
                     },
 
@@ -44,7 +44,7 @@ namespace VidéoThèque.Models
                         Realisateur = "Test",
                         Acteurs = "De Niro",
                         Synopsis = "La rencontre de deux personnes",
-                        NbLocation = 12
+                        NbLocation = 12,
                     },
 
                     new Movie
@@ -55,7 +55,8 @@ namespace VidéoThèque.Models
                         Price = 9.99M,
                         Realisateur = "Test",
                         Acteurs = "De Niro",
-                        Synopsis = "La rencontre de deux personnes"
+                        Synopsis = "La rencontre de deux personnes",
+                        NbLocation = 25,
                     },
 
                     new Movie
@@ -66,7 +67,8 @@ namespace VidéoThèque.Models
                         Price = 3.99M,
                         Realisateur = "Test",
                         Acteurs = "De Niro",
-                        Synopsis = "La rencontre de deux personnes"
+                        Synopsis = "La rencontre de deux personnes",
+                        NbLocation = 55,
                     }
                 );
                 context.SaveChanges();
