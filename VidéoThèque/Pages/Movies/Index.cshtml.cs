@@ -28,6 +28,9 @@ namespace VidéoThèque.Pages.Movies
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchString { get; set; }
 
+        //Contient le texte de l'utilisateur entrée dans la zone de recherche de date (plus récent ou plus vieux)
+        public string SearchDate { get; set; }
+
         //Contient la liste des genres
         public SelectList Genres { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -48,12 +51,24 @@ namespace VidéoThèque.Pages.Movies
             //Si la requête n'est pas nul (SearchString) la requête sur les film est modifié on affiche telle type de film
             if(!string.IsNullOrEmpty(SearchString)) 
             {
+                System.Diagnostics.Debug.WriteLine(SearchString);
+                
                 movies = movies.Where(s => s.Title.Contains(SearchString));
             }
 
             if(!string.IsNullOrEmpty(MovieGenre))
             {
                 movies = movies.Where(x => x.Genre == MovieGenre);
+            }
+
+            if (!string.IsNullOrEmpty(SearchDate))
+            {
+                System.Diagnostics.Debug.WriteLine(SearchDate);
+                if (SearchDate == "youngest")
+                {
+                    movies = movies.OrderByDescending(s => s.ReleaseDate);
+
+                }
             }
 
             //On affiche la requête si elle est modifié, tout les films sinon.

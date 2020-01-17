@@ -30,7 +30,9 @@ namespace VidéoThèque.Models
                         Price = 7.99M,
                         Realisateur = "Test",
                         Acteurs = "De Niro",
-                        Synopsis = "La rencontre de deux personnes"
+                        Synopsis = "La rencontre de deux personnes",
+                        NbLocation = 2
+
                     },
 
                     new Movie
@@ -41,7 +43,8 @@ namespace VidéoThèque.Models
                         Price = 8.99M,
                         Realisateur = "Test",
                         Acteurs = "De Niro",
-                        Synopsis = "La rencontre de deux personnes"
+                        Synopsis = "La rencontre de deux personnes",
+                        NbLocation = 12
                     },
 
                     new Movie

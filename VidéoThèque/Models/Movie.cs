@@ -49,5 +49,8 @@ namespace VidéoThèque.Models
         //Le nom de l'image qui sera stocké dans ~/img/
         [Display(Name = "Affiche du film")]
         public string Image { get; set; }
+
+        [Display(Name = "Nombre de location")]
+        public int NbLocation { get; set; }
     }
 }
