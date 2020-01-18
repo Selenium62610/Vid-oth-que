@@ -74,7 +74,7 @@ namespace VidéoThèque.Pages
                     // Sinon redirection vers page d'accueil client 
                     else
                     {
-                        Response.Redirect("./Privacy");
+                        Response.Redirect("./MovieDisplay");
                     }
                 }
             }    

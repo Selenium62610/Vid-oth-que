@@ -28,6 +28,7 @@ namespace VidéoThèque.Pages.Movies
         //Gestion de l'accès à la page Commande et extraction du film de la bdd si c'est possible
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
@@ -51,6 +52,7 @@ namespace VidéoThèque.Pages.Movies
         //Instructions de retour de la page 
         public async Task<IActionResult> OnPostAsync()
         {
+
             //Si erreur liée au modèle, le formulaire est réaffiché
             if (!ModelState.IsValid)
             {
@@ -59,6 +61,16 @@ namespace VidéoThèque.Pages.Movies
             //Sinon on ajoute la commande
             _context.Commande.Add(Commande);
             await _context.SaveChangesAsync();
+
+            //Incrémentation de nombre de location d'un film
+            /*    Movie = await _context.Movie
+                .AsNoTracking()
+                .Include(movieNombreLocation => Movie.NbLocation+1)
+                .FirstOrDefaultAsync(m => m.ID == Movie.ID);*/
+            //var updateCommand = "Update Movie SET NbLocation=@movieNombreLocation WHERE Title=@movieId";
+            //await _context.Movie.Add(Movie);
+
+
             //Redirection vers la page Index (l'accueil)
             return RedirectToPage("./Index");
         }

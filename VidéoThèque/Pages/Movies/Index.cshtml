@@ -15,11 +15,15 @@
         Par type: <select asp-for="MovieGenre" asp-items="Model.Genres">
             <option value="">All</option>
         </select>
-        Par Date de sortie <select type="text" asp-for="SearchDate">
-            <option value="">Sans importance</option>
-            <option value="youngest">Les plus récents</option>
-            <option value="oldest">Les plus Vieux</option>
-        </select>
+        <!--Par Date de sortie <select type="text" asp-for="SearchDate">
+        <option value="">Sans importance</option>
+        <option value="youngest">Les plus récents</option>
+        <option value="oldest">Les plus Vieux</option>
+    </select>
+    Par location <select type="text" asp-for="SearchLocation">
+        <option value="most">Les plus loués</option>
+        <option value="less">Les moins loués</option>
+    </select>-->
         Titre recherché: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filtrer" />
     </p>
@@ -35,7 +39,9 @@
                 @Html.DisplayNameFor(model => model.Movie[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SearchDate">
+                    @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movie[0].Genre)
@@ -53,7 +59,9 @@
                 @Html.DisplayNameFor(model => model.Movie[0].Synopsis)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Movie[0].NbLocation)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SearchLocation">
+                    @Html.DisplayNameFor(model => model.Movie[0].NbLocation)
+                </a>
             </th>
             <th></th>
         </tr>

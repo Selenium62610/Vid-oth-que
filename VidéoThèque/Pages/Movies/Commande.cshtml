@@ -80,7 +80,7 @@
                 <option value="64">72h soit 10.0€</option>
             </select>
             <div class="form-group">
-                <input type="submit" value="Accepter la commande" class="btn btn-primary" />
+                <input id="button1" type="submit" value="Accepter la commande" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -96,6 +96,7 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <br />
 }
 
 

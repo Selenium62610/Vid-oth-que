@@ -19,6 +19,10 @@ namespace VidéoThèque.Pages.Movies
         public IndexModel(VidéoThèque.Models.VidéoThèqueContext context)
         {
             _context = context;
+
+            //var DateSortParam = SearchDate == "Date" ? "Younger" : "Older";
+
+            //var Movie = from s in _context.Movie select s;
         }
 
         //Permet la recherche par nom et par Genre
@@ -31,6 +35,8 @@ namespace VidéoThèque.Pages.Movies
         //Contient le texte de l'utilisateur entrée dans la zone de recherche de date (plus récent ou plus vieux)
         public string SearchDate { get; set; }
 
+        public string SearchLocation { get; set; }
+
         //Contient la liste des genres
         public SelectList Genres { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -40,41 +46,51 @@ namespace VidéoThèque.Pages.Movies
 
 
 
+
         //Parmis tout les films on recherche celui qui contiens le même titre que celui dans la barre de recherche
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
-            //Récupère tout les gens de la liste
+            SearchDate = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            SearchLocation = sortOrder == "Date" ? "date_desc" : "Date";
+
             IQueryable<string> genreQuery = from m in _context.Movie orderby m.Genre select m.Genre;
 
             var movies = from m in _context.Movie select m;
 
-            //Si la requête n'est pas nul (SearchString) la requête sur les film est modifié on affiche telle type de film
-            if(!string.IsNullOrEmpty(SearchString)) 
+            IQueryable<Movie> MovieQuery = from m in _context.Movie
+                                           select m;
+
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                System.Diagnostics.Debug.WriteLine(SearchString);
-                
-                movies = movies.Where(s => s.Title.Contains(SearchString));
+                MovieQuery = MovieQuery.Where(s => s.Title.Contains(SearchString));
             }
 
-            if(!string.IsNullOrEmpty(MovieGenre))
+            if (!string.IsNullOrEmpty(MovieGenre))
             {
-                movies = movies.Where(x => x.Genre == MovieGenre);
+                MovieQuery = MovieQuery.Where(x => x.Genre == MovieGenre);
             }
 
-            if (!string.IsNullOrEmpty(SearchDate))
+            switch (sortOrder)
             {
-                System.Diagnostics.Debug.WriteLine(SearchDate);
-                if (SearchDate == "youngest")
-                {
-                    movies = movies.OrderByDescending(s => s.ReleaseDate);
-
-                }
+                case "name_desc":
+                    MovieQuery = MovieQuery.OrderByDescending(m => m.ReleaseDate);
+                    break;
+                case "Date":
+                    MovieQuery = MovieQuery.OrderBy(m => m.NbLocation);
+                    break;
+                case "date_desc":
+                    MovieQuery = MovieQuery.OrderByDescending(m => m.NbLocation);
+                    break;
+                default:
+                    MovieQuery = MovieQuery.OrderBy(m => m.ReleaseDate);
+                    break;
             }
 
-            //On affiche la requête si elle est modifié, tout les films sinon.
-            Movie = await movies.ToListAsync();
-        
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
+
+            Movie = await MovieQuery.AsNoTracking().ToListAsync();
+            //Movie = await movies.ToListAsync();
+
         }
     }
 }
