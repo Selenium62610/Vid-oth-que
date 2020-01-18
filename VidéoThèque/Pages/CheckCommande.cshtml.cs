@@ -21,26 +21,37 @@ namespace VidéoThèque.Pages
             _context = context;
         }
 
-        [BindProperty(SupportsGet = true)]
-        //Contient le texte de l'utilisateur entrée dans la zone de recherche
-        public string SearchString { get; set; }
-
         //Déclaration de la propriété obligatoire Movie
         public Movie Movie { get; set; }
 
         //Déclaration de la propriété Commande
         public Commande Commande { get; set; }
 
-        //Contient la liste des films
-        public SelectList Films { get; set; }
         [BindProperty(SupportsGet = true)]
-
         //Liste de commande temporaire (sera modifié pour modifié l'affichage de CheckCommande)
         public IList<Commande> CommandeList { get; set; }
 
+
+
+        //Contient la liste des locations
+        public SelectList Locations { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        //Contient le nom du film sélectionné par l'utilisateur
+        public string EtatCommande { get; set; }
+
+        
         [BindProperty(SupportsGet = true)]
         //Contient le nom du film sélectionné par l'utilisateur
         public string MovieTitre { get; set; }
+   
+        //Contient la liste des films
+        public SelectList Films { get; set; }
+       
+
+        [BindProperty(SupportsGet = true)]
+        //Contient le texte de l'utilisateur entrée dans la zone de recherche
+        public string SearchString { get; set; }
 
 
         public async Task OnGetAsync()
@@ -52,6 +63,7 @@ namespace VidéoThèque.Pages
             IQueryable < Commande > CommandeQuery = from m in _context.Commande
                                                     select m;
 
+            
             //On vérifie que MovieTitre n'est pas null ou vide 
             if (!string.IsNullOrEmpty(MovieTitre))
             {
@@ -63,9 +75,19 @@ namespace VidéoThèque.Pages
                 CommandeQuery = CommandeQuery.Where(x => x.IDuser.Contains(SearchString));
             }
 
+            if (EtatCommande == "EnCours")
+            {
+                CommandeQuery = CommandeQuery.Where(x => DateTime.Compare(DateTime.Now, x.dateRetour)<0);
+            }
+            if (EtatCommande == "Finis")
+            {
+                CommandeQuery = CommandeQuery.Where(x => DateTime.Compare(DateTime.Now, x.dateRetour) > 0);
+            }
             CommandeList = await CommandeQuery.ToListAsync();
 
-            Films = new SelectList(await UtilisateurQuery.Distinct().ToListAsync());
+            Films = new SelectList(await CommandeQuery.Distinct().ToListAsync());
+
+            Locations = new SelectList(await CommandeQuery.Distinct().ToListAsync());
         }
 
     }

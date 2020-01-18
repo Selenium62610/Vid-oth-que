@@ -9,7 +9,14 @@
 
 <form>
     <p>
-        Par Film: <select asp-for="MovieTitre" asp-items="Model.Films">
+        Par Location: 
+        <select asp-for="EtatCommande" >
+            <option value="">Tous</option>
+            <option value="EnCours">En cours de location</option>
+            <option value="Finis">Anciennes locations</option>
+        </select>
+        Par Film: 
+        <select asp-for="MovieTitre" asp-items="Model.Films">
             <option value="">Tous</option>
         </select>
         Par Utilisateur: <input type="text" asp-for="SearchString" />
