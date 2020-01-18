@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +33,7 @@ namespace VidéoThèque.Pages.Movies
             {
                 return NotFound();
             }
-
+            
             Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Movie == null)
@@ -62,5 +63,9 @@ namespace VidéoThèque.Pages.Movies
             //Redirection vers la page Index (l'accueil)
             return RedirectToPage("./Index");
         }
+
+   
+        
+            
     }
 }

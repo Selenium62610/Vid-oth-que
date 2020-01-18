@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -42,14 +45,30 @@ namespace VidéoThèque.Pages
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchMdp { get; set; }
 
-
+        // Liste de claims (revendications) 
+        public List<Claim> claims = new List<Claim>();
 
         //Parmis tout les utilisateurs on recherche celui qui contient les mêmes identifiants et mot de passe que celui dans la barre de recherche (s'il existe)
         public async Task OnGetAsync()
         {
             //Récupère tout les gens de la liste  
             var users = from u in _context.User select u;
-
+            
+            try  
+            {  
+                // Setting, le type de Name prend la valeur de l'identifiant de l'user
+                claims.Add(new Claim(ClaimTypes.Name, SearchIdentifiant));  
+                var claimIdenties = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);  
+                var claimPrincipal = new ClaimsPrincipal(claimIdenties);  
+                var authenticationManager = Request.HttpContext;  
+  
+                // Authentification 
+                await authenticationManager.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimPrincipal, new AuthenticationProperties() { IsPersistent = true });  
+            }  
+            catch (Exception ex)  
+            {  
+                // Info    
+            }  
             //Si les champs Identifiants et Mot de Passe ne sont pas nuls
             if (!string.IsNullOrEmpty(SearchIdentifiant) && !string.IsNullOrEmpty(SearchMdp)){
                 // Si l'utilisateur est l'admin

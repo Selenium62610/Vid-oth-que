@@ -26,11 +26,13 @@ namespace VidéoThèque.Models
                     new Commande
                     {
                         IDmovie = 1,
-                        dureeLocation = 48,
-                        IDuser = 1,
-                        dateLocation = DateTime.Parse("2019-4-15")
+                        dureeLocation = 2,
+                        IDuser = "Sélénium",
+                        dateLocation = DateTime.Parse("2019-4-15"),
+                        dateRetour = DateTime.Parse("2019-4-17"),
+                        price = 5.99
                     }
-                );
+                ); ;
                 context.SaveChanges();
             }
         }

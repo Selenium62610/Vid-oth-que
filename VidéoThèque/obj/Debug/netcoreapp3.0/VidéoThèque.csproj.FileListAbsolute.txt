@@ -268,7 +268,6 @@ C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.csprojAssemblyReference.cache
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\staticwebassets\VidéoThèque.StaticWebAssets.Manifest.cache
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\staticwebassets\VidéoThèque.StaticWebAssets.xml
-C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.RazorAssemblyInfo.cache
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.RazorAssemblyInfo.cs
 C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.AssemblyInfoInputs.cache
@@ -448,3 +447,10 @@ C:\Users\Edouard\source\repos\NewVidéothèque\Vid-oth-que\VidéoThèque\obj\Deb
 C:\Users\Edouard\source\repos\NewVidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.csproj.CopyComplete
 C:\Users\Edouard\source\repos\NewVidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.dll
 C:\Users\Edouard\source\repos\NewVidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.pdb
+C:\Users\Bettina\source\repos\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\Users\Bettina\source\repos\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\Bettina\source\repos\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Bettina\source\repos\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\VidéoThèque.StaticWebAssets.xml
+C:\Users\Bettina\source\repos\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Bettina\source\repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Bettina\source\repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.MvcApplicationPartsAssemblyInfo.cache
