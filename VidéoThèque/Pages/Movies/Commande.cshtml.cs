@@ -60,8 +60,8 @@ namespace VidéoThèque.Pages.Movies
             //Sinon on ajoute la commande
             _context.Commande.Add(Commande);
             await _context.SaveChangesAsync();
-            //Redirection vers la page Index (l'accueil)
-            return RedirectToPage("./Index");
+            //Redirection vers la page de validation de la commande 
+            return RedirectToPage("./ValidationCommande");
         }
 
    
