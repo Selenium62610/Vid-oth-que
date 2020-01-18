@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ namespace VidéoThèque.Models
 
         public int dureeLocation { get; set; }
 
-        public String IDuser { get; set; }
+        public string IDuser { get; set; }
 
         public DateTime dateLocation
         { get; set; }

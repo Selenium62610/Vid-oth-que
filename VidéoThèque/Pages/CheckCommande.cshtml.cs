@@ -21,6 +21,9 @@ namespace VidéoThèque.Pages
             _context = context;
         }
 
+        //Contient le texte de l'utilisateur entrée dans la zone de recherche
+        public string SearchString { get; set; }
+
         //Déclaration de la propriété obligatoire Movie
         public Movie Movie { get; set; }
 
@@ -38,9 +41,6 @@ namespace VidéoThèque.Pages
         //Contient le genre sélectionné par l'utilisateur
         public string MovieGenre { get; set; }
 
-        //Contient le texte de l'utilisateur entrée dans la zone de recherche
-        public string SearchString { get; set; }
-
 
         public async Task OnGetAsync()
         {
@@ -51,17 +51,16 @@ namespace VidéoThèque.Pages
             IQueryable < Commande > CommandeQuery = from m in _context.Commande
                                                     select m;
 
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                CommandeQuery = CommandeQuery.Where(x => x.IDuser.Contains(SearchString));
-            }
-
             //On vérifie que MovieGenre n'est pas null ou vide 
             if (!string.IsNullOrEmpty(MovieGenre))
             {
                 CommandeQuery = CommandeQuery.Where(x => x.IDmovie == Int32.Parse(MovieGenre));
             }
 
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                CommandeQuery = CommandeQuery.Where(x => x.IDuser.Contains(SearchString));
+            }
 
             CommandeList = await CommandeQuery.AsNoTracking().ToListAsync();
 
