@@ -40,8 +40,9 @@ namespace VidéoThèque.Pages.Movies
         //Contient le genre sélectionné par l'utilisateur
         public string MovieGenre { get; set; }
 
+        public String NFilm { get; set; }
 
-        //Parmis tout les films on recherche celui qui contiens le même titre que celui dans la barre de recherche
+
         public async Task OnGetAsync(string sortOrder)
         {
             
@@ -51,8 +52,8 @@ namespace VidéoThèque.Pages.Movies
 
             var movies = from m in _context.Movie select m;
 
-            IQueryable<Movie> MovieQuery = from m in _context.Movie
-                                           select m;
+            IQueryable<Movie> MovieQuery = (from m in _context.Movie
+                                           select m);
 
 
             //Si la requête n'est pas nul (SearchString) la requête sur les film est modifié on affiche telle type de film
@@ -65,14 +66,17 @@ namespace VidéoThèque.Pages.Movies
             {
                 MovieQuery = MovieQuery.Where(x => x.Genre == MovieGenre);
             }
-
+            if (NFilm == "50")
+            {
+                MovieQuery.OrderBy(m => m.NbLocation).Take(2);
+            }
             switch (sortOrder)
             {
                 case "name_desc":
                     MovieQuery = MovieQuery.OrderByDescending(m => m.ReleaseDate);
                     break;
                 case "Date":
-                    MovieQuery = MovieQuery.OrderBy(m => m.NbLocation);
+                    MovieQuery = MovieQuery.OrderBy(m => m.NbLocation).Take(10);
                     break;
                 case "date_desc":
                     MovieQuery = MovieQuery.OrderByDescending(m => m.NbLocation);

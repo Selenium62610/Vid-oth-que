@@ -53,7 +53,6 @@ namespace VidéoThèque.Pages
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchString { get; set; }
 
-        public int SearchNumber { get; set; }
 
         public async Task OnGetAsync()
         {
