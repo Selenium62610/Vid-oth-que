@@ -33,7 +33,7 @@ namespace VidéoThèque.Pages
         //Lit la valeur du Mot de passe du formulaire
         [BindProperty(SupportsGet = true)]
         //Champs obligatoire
-        
+
         [Required(ErrorMessage = "Un identifiant est requis.")]
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchIdentifiant { get; set; }
@@ -53,50 +53,62 @@ namespace VidéoThèque.Pages
         {
             //Récupère tout les gens de la liste  
             var users = from u in _context.User select u;
-            
-            try  
-            {  
-                // Setting, le type de Name prend la valeur de l'identifiant de l'user
-                claims.Add(new Claim(ClaimTypes.Name, SearchIdentifiant));  
-                var claimIdenties = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);  
-                var claimPrincipal = new ClaimsPrincipal(claimIdenties);  
-                var authenticationManager = Request.HttpContext;  
-  
-                // Authentification 
-                await authenticationManager.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimPrincipal, new AuthenticationProperties() { IsPersistent = true });  
-            }  
-            catch (Exception ex)  
-            {  
-                // Info    
-            }  
+
+
             //Si les champs Identifiants et Mot de Passe ne sont pas nuls
-            if (!string.IsNullOrEmpty(SearchIdentifiant) && !string.IsNullOrEmpty(SearchMdp)){
-                // Si l'utilisateur est l'admin
-                if (SearchIdentifiant == "Admin" && SearchMdp == "Admin")
+            if (!string.IsNullOrEmpty(SearchIdentifiant) && !string.IsNullOrEmpty(SearchMdp))
+            {
+                users = users.Where(s => SearchIdentifiant == s.Identifiant);
+                users = users.Where(s => SearchMdp == s.MotDePasse);
+                // S'il n'y a pas d'utilisateurs avec ces identifiant et mot de passe
+                if (users.Count() == 0)
                 {
-                    //Redirection vers la page d'accueil de l'admin
-                    Response.Redirect("./Movies/Index");
+                    //Redirection vers la page d'inscription
+                    Response.Redirect("./Users/Inscription");
 
                 }
-                // Sinon on regarde s'il est dans la bdd User
+                // Sinon redirection vers page d'accueil client 
                 else
                 {
-                    users = users.Where(s => SearchIdentifiant == s.Identifiant);
-                    users = users.Where(s => SearchMdp == s.MotDePasse);
-                    // S'il n'y a pas d'utilisateurs avec ces identifiant et mot de passe
-                    if (users.Count() == 0)
+                    bool role = true;
+                    String id = "";
+                    // On récupère le role de l'utilisateur (role = true si c'est l'admin et false sinon) et son id
+                    foreach (User u in users)
                     {
-                        //Redirection vers la page d'inscription
-                        Response.Redirect("./Users/Inscription");
-
+                        role = u.isAdmin;
+                        id = u.ID.ToString();
                     }
-                    // Sinon redirection vers page d'accueil client 
-                    else
+                    try
                     {
+                        // Setting, le type de Name prend la valeur de l'identifiant de l'user
+                        claims.Add(new Claim(ClaimTypes.Name, SearchIdentifiant));
+                        claims.Add(new Claim(ClaimTypes.NameIdentifier, id));
+                        var claimIdenties = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                        var claimPrincipal = new ClaimsPrincipal(claimIdenties);
+                        var authenticationManager = Request.HttpContext;
+                        // Authentification 
+                        await authenticationManager.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimPrincipal, new AuthenticationProperties() { IsPersistent = true });
+                    }
+                    catch (Exception ex)
+                    {
+                        // Info    
+                    }
+                    // Si l'utilisateur n'est pas un admin
+                    if (role.CompareTo(true) != 0)
+                    {
+                        // Redirection liste de films à louer
                         Response.Redirect("./MovieDisplay");
                     }
+                    // Sinon il s'agit de l'admin
+                    else
+                    {
+                        // Redirection à la page des films de la vidéothèque
+                        Response.Redirect("./Movies/Index");   
+                    }
                 }
-            }    
+
+            }
         }
     }
 }
+

@@ -26,6 +26,7 @@ namespace VidéoThèque.Models
                     new Commande
                     {
                         IDmovie = 1,
+                        TitleMovie = "When Harry Met Sally",
                         dureeLocation = 2,
                         IDuser = "Sélénium",
                         dateLocation = DateTime.Parse("2019-4-15"),

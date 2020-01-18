@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edouard\\Documents\\M2_Progr_Avance\\.Net\\Vidéothèque\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj": {}
+    "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edouard\\Documents\\M2_Progr_Avance\\.Net\\Vidéothèque\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj": {
+    "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edouard\\Documents\\M2_Progr_Avance\\.Net\\Vidéothèque\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
+        "projectUniqueName": "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
         "projectName": "VidéoThèque",
-        "projectPath": "C:\\Users\\Edouard\\Documents\\M2_Progr_Avance\\.Net\\Vidéothèque\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
-        "packagesPath": "C:\\Users\\Edouard\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edouard\\Documents\\M2_Progr_Avance\\.Net\\Vidéothèque\\Vid-oth-que\\VidéoThèque\\obj\\",
+        "projectPath": "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
+        "packagesPath": "C:\\Users\\Bettina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edouard\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bettina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
