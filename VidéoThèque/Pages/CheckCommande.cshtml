@@ -1,0 +1,67 @@
+@page
+@model VidéoThèque.Pages.CheckCommandeModel
+@{
+    ViewData["Title"] = "Commandes en cours";
+}
+
+<h1>Détails</h1>
+
+<form>
+    <p>
+        Par Film: <select asp-for="MovieGenre" asp-items="Model.Utilisateur">
+            <option value="">Tous</option>
+        </select>
+        Par Utilisateur: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filtrer" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommandeList[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommandeList[0].IDuser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommandeList[0].IDmovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommandeList[0].dureeLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommandeList[0].dateRetour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommandeList[0].price) (en €)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CommandeList)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDuser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDmovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dureeLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateRetour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+        </tr>
+        }
+
+    </tbody>
+ </table>

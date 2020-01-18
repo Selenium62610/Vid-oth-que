@@ -8,10 +8,14 @@
     <Compile Remove="Models\Class.cs" />
     <Compile Remove="Models\Class1.cs" />
     <Compile Remove="Models\Index.cshtml.cs" />
+    <Compile Remove="Pages\Index1.cshtml.cs" />
+    <Compile Remove="Pages\Movies\CheckCommande.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Models\Index.cshtml" />
+    <Content Remove="Pages\Index1.cshtml" />
+    <Content Remove="Pages\Movies\CheckCommande.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
