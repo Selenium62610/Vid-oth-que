@@ -21,6 +21,7 @@ namespace VidéoThèque.Pages
             _context = context;
         }
 
+        [BindProperty(SupportsGet = true)]
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchString { get; set; }
 
@@ -30,16 +31,16 @@ namespace VidéoThèque.Pages
         //Déclaration de la propriété Commande
         public Commande Commande { get; set; }
 
-        //Contient la liste des genres
-        public SelectList Utilisateur { get; set; }
+        //Contient la liste des films
+        public SelectList Films { get; set; }
         [BindProperty(SupportsGet = true)]
 
-        //List de commande temporaire (sera modifié pour modifié l'affichage de CheckCommande)
+        //Liste de commande temporaire (sera modifié pour modifié l'affichage de CheckCommande)
         public IList<Commande> CommandeList { get; set; }
-        [BindProperty(SupportsGet = true)]
 
-        //Contient le genre sélectionné par l'utilisateur
-        public string MovieGenre { get; set; }
+        [BindProperty(SupportsGet = true)]
+        //Contient le nom du film sélectionné par l'utilisateur
+        public string MovieTitre { get; set; }
 
 
         public async Task OnGetAsync()
@@ -51,10 +52,10 @@ namespace VidéoThèque.Pages
             IQueryable < Commande > CommandeQuery = from m in _context.Commande
                                                     select m;
 
-            //On vérifie que MovieGenre n'est pas null ou vide 
-            if (!string.IsNullOrEmpty(MovieGenre))
+            //On vérifie que MovieTitre n'est pas null ou vide 
+            if (!string.IsNullOrEmpty(MovieTitre))
             {
-                CommandeQuery = CommandeQuery.Where(x => x.TitleMovie == MovieGenre);
+                CommandeQuery = CommandeQuery.Where(x => x.TitleMovie == MovieTitre);
             }
 
             if (!string.IsNullOrEmpty(SearchString))
@@ -64,7 +65,7 @@ namespace VidéoThèque.Pages
 
             CommandeList = await CommandeQuery.AsNoTracking().ToListAsync();
 
-            Utilisateur = new SelectList(await UtilisateurQuery.Distinct().ToListAsync());
+            Films = new SelectList(await UtilisateurQuery.Distinct().ToListAsync());
         }
 
     }

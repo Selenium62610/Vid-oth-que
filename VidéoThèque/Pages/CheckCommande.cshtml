@@ -9,7 +9,7 @@
 
 <form>
     <p>
-        Par Film: <select asp-for="MovieGenre" asp-items="Model.Utilisateur">
+        Par Film: <select asp-for="MovieTitre" asp-items="Model.Films">
             <option value="">Tous</option>
         </select>
         Par Utilisateur: <input type="text" asp-for="SearchString" />
@@ -23,22 +23,22 @@
                 @Html.DisplayNameFor(model => model.CommandeList[0].ID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CommandeList[0].IDuser)
+                Utilisateur
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CommandeList[0].IDmovie)
+                Titre du film
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CommandeList[0].TitleMovie)
+                Durée de la location
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CommandeList[0].dureeLocation)
+                Date de Location
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CommandeList[0].dateRetour)
+                Date de Retour
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CommandeList[0].price) (en €)
+               Prix (en €)
             </th>
         </tr>
     </thead>
@@ -53,13 +53,13 @@
                 @Html.DisplayFor(modelItem => item.IDuser)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IDmovie)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.TitleMovie)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dureeLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateLocation)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dateRetour)
