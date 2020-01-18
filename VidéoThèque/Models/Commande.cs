@@ -13,20 +13,28 @@ namespace VidéoThèque.Models
         //Clé primaire requise pour la base de données des commandes
         public int ID { get; set; }
 
+        // ID du film loué
         public int IDmovie { get; set; }
 
+        // Durée de la location en jour
         public int dureeLocation { get; set; }
 
+        // Identifiant de l'utilisateur
         public String IDuser { get; set; }
 
+        // Titre du film
         public String TitleMovie { get; set; }
 
+        // Date du début de la location 
         public DateTime dateLocation
         { get; set; }
 
+        // Prix de base du film
+        public decimal prixDuFilm
+        { get; set; }
+
+        // Date de retour (calculé grâce à dr)
         private DateTime dr;
-
-
         public DateTime dateRetour
         {
             get
@@ -41,8 +49,17 @@ namespace VidéoThèque.Models
                
             }
         }
-        
-        public double price{ get; set;}
+
+        // Prix du film en fonction du nombre de jours de location
+        private double calculPrix;
+        public double price{ 
+            get { return calculPrix; } 
+            set { decimal d = prixDuFilm;
+                double du = dureeLocation;
+                decimal.ToDouble(d);
+                calculPrix = decimal.ToDouble(d) + du;
+            } 
+        }
 
     }
 }

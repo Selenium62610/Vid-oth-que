@@ -613,3 +613,7 @@ C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\Vidéo
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.csproj.CopyComplete
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.dll
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.pdb
+C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\CheckCommande.cshtml.g.cs
+C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Movies\ValidationCommande.cshtml.g.cs
+C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutAccueil.cshtml.g.cs
+C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutAdmin.cshtml.g.cs

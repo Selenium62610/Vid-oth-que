@@ -31,6 +31,7 @@ namespace VidéoThèque.Models
                         IDuser = "Sélénium",
                         dateLocation = DateTime.Parse("2019-4-15"),
                         dateRetour = DateTime.Parse("2019-4-17"),
+                        prixDuFilm = 3.99M,
                         price = 5.99
                     }
                 ); ;
