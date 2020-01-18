@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace VidéoThèque.Models
         // Titre du film
         public String TitleMovie { get; set; }
 
+        [DataType(DataType.Date)]
         // Date du début de la location 
         public DateTime dateLocation
         { get; set; }
@@ -35,25 +37,26 @@ namespace VidéoThèque.Models
 
         // Date de retour (calculé grâce à dr)
         private DateTime dr;
+        [DataType(DataType.Date)]
         public DateTime dateRetour
         {
             get
             {
-                return dr;
+                return dateRetour = dr;
             }
             set
             {
                 DateTime d = dateLocation;
                 double j = dureeLocation;
                 dr = d.AddDays(j);
-               
             }
         }
+
 
         // Prix du film en fonction du nombre de jours de location
         private double calculPrix;
         public double price{ 
-            get { return calculPrix; } 
+            get { return price = calculPrix; } 
             set { decimal d = prixDuFilm;
                 double du = dureeLocation;
                 decimal.ToDouble(d);

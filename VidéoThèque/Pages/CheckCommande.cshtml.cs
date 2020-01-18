@@ -63,7 +63,7 @@ namespace VidéoThèque.Pages
                 CommandeQuery = CommandeQuery.Where(x => x.IDuser.Contains(SearchString));
             }
 
-            CommandeList = await CommandeQuery.AsNoTracking().ToListAsync();
+            CommandeList = await CommandeQuery.ToListAsync();
 
             Films = new SelectList(await UtilisateurQuery.Distinct().ToListAsync());
         }
