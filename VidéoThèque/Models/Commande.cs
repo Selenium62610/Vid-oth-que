@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace VidéoThèque.Models
@@ -17,10 +19,13 @@ namespace VidéoThèque.Models
 
         public String IDuser { get; set; }
 
+        public String TitleMovie { get; set; }
+
         public DateTime dateLocation
         { get; set; }
 
         private DateTime dr;
+
 
         public DateTime dateRetour
         {
@@ -33,9 +38,10 @@ namespace VidéoThèque.Models
                 DateTime d = dateLocation;
                 double j = dureeLocation;
                 dr = d.AddDays(j);
+               
             }
         }
-
+        
         public double price{ get; set;}
 
     }

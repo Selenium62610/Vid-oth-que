@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -26,7 +27,7 @@ namespace VidéoThèque.Pages.Movies
 
         public User User { get; set; }
 
-        //Gestion de l'accès à la page Commande et extraction du film de la bdd si c'est possible
+                //Gestion de l'accès à la page Commande et extraction du film de la bdd si c'est possible
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -40,7 +41,7 @@ namespace VidéoThèque.Pages.Movies
             {
                 return NotFound();
             }
-
+            
             return Page();
         }
 
@@ -52,6 +53,7 @@ namespace VidéoThèque.Pages.Movies
         //Instructions de retour de la page 
         public async Task<IActionResult> OnPostAsync()
         {
+            
             //Si erreur liée au modèle, le formulaire est réaffiché
             if (!ModelState.IsValid)
             {

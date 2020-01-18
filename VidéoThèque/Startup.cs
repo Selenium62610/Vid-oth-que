@@ -46,11 +46,7 @@ namespace VidéoThèque
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
             });
 
-            services.AddMvc().AddRazorPagesOptions(options =>
-            {
-                options.Conventions.AuthorizeFolder("/");
-                options.Conventions.AllowAnonymousToPage("/Index");
-            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

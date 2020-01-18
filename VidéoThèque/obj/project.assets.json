@@ -8527,11 +8527,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bettina\\Source\\Repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
+      "projectUniqueName": "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
       "projectName": "VidéoThèque",
-      "projectPath": "C:\\Users\\Bettina\\Source\\Repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
+      "projectPath": "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\VidéoThèque.csproj",
       "packagesPath": "C:\\Users\\Bettina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bettina\\Source\\Repos\\Vid-oth-que\\VidéoThèque\\obj\\",
+      "outputPath": "C:\\Users\\Bettina\\source\\repos\\Vid-oth-que\\VidéoThèque\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bettina\\AppData\\Roaming\\NuGet\\NuGet.Config",

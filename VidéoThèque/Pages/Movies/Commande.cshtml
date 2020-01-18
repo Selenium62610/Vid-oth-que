@@ -74,10 +74,13 @@
         <form method="post">
             <!--Input hidden pour l'insertion des différentes valeurs dans la table Commande-->
             <input type="hidden" asp-for="Commande.IDmovie" value="@Model.Movie.ID" />
+            <input type="hidden" asp-for="Commande.TitleMovie" value="@Model.Movie.Title" />
             <input type="hidden" asp-for="Commande.dateLocation" value="@DateTime.Now" />
             <input type="hidden" asp-for="Commande.dateRetour" value="@DateTime.Now" />
             <input type="hidden" asp-for="Commande.price" value="@Model.Movie.Price" />
-            <input type="hidden" asp-for="Commande.IDuser" value="@User.Identity.Name"/>
+            <input type="hidden" asp-for="Commande.IDuser" value="@User.Identity.Name" />
+
+
 
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.Commande.dureeLocation, new List<SelectListItem>
