@@ -15,7 +15,7 @@ namespace VidéoThèque.Models
 
         public int dureeLocation { get; set; }
 
-        public string IDuser { get; set; }
+        public String IDuser { get; set; }
 
         public DateTime dateLocation
         { get; set; }
