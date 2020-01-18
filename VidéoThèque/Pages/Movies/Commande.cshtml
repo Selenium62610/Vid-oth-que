@@ -12,14 +12,14 @@
     <h1>Détails de la commande</h1>
 
     <div>
-        <h4>Récapitulatif</h4>
+        <h4>Récapitulatif </h4>
         <hr />
         <dl class="row">
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Movie.Image)
             </dt>
             <dd class="col-sm-10">
-                <img src="@Url.Content("~/img/"+Model.Movie.Image+".PNG")" height="250px" width="200px"
+                <img src="@Url.Content("~/img/"+Model.Movie.Image+".PNG")" />
             </dd>
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Movie.Title)
@@ -71,14 +71,23 @@
 
     <div class="col-md-10">
         <form method="post">
+            <!--Input hidden pour l'insertion des différentes valeurs dans la table Commande-->
             <input type="hidden" asp-for="Commande.IDmovie" value="@Model.Movie.ID" />
-            <input type="hidden" asp-for="Commande.dateLocation" value="@DateTime.Today" />
-            <select asp-for="Commande.dureeLocation" name="dureeLocation">
-                <option value="">Selectionner une durée de location</option>
-                <option value="24">24h soit 3.99€</option>
-                <option value="48">48h soit 6.99€</option>
-                <option value="64">72h soit 10.0€</option>
-            </select>
+            <input type="hidden" asp-for="Commande.dateLocation" value="@DateTime.Now" />
+            <input type="hidden" asp-for="Commande.dateRetour" value="@DateTime.Now" />
+            <input type="hidden" asp-for="Commande.price" value="@Model.Movie.Price" />
+            <input type="hidden" asp-for="Commande.IDuser" value="@User.Identity.Name"/>
+
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Commande.dureeLocation, new List<SelectListItem>
+                        {
+                            new SelectListItem {Text = "24h soit "+@Model.Movie.Price +"€", Value = "1", Selected = true },
+                            new SelectListItem {Text = "48h soit "+ @Decimal.Add(@Model.Movie.Price, 1.0m) +" €", Value = "2" },
+                            new SelectListItem {Text = "72h soit "+ @Decimal.Add(@Model.Movie.Price, 2.0m) +" €", Value = "3" },
+                        }, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Movie.Price, "", new { @class = "text-danger" })
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Accepter la commande" class="btn btn-primary" />
             </div>
@@ -97,5 +106,3 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-
-

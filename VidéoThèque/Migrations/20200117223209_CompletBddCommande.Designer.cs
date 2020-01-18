@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VidéoThèque.Models;
 
 namespace VidéoThèque.Migrations
 {
     [DbContext(typeof(VidéoThèqueContext))]
-    partial class VidéoThèqueContextModelSnapshot : ModelSnapshot
+    [Migration("20200117223209_CompletBddCommande")]
+    partial class CompletBddCommande
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,8 +31,8 @@ namespace VidéoThèque.Migrations
                     b.Property<int>("IDmovie")
                         .HasColumnType("int");
 
-                    b.Property<string>("IDuser")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("IDuser")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("dateLocation")
                         .HasColumnType("datetime2");

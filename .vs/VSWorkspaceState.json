@@ -2,11 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\VidéoThèque",
-    "\\VidéoThèque\\Migrations",
     "\\VidéoThèque\\Models",
-    "\\VidéoThèque\\Pages",
-    "\\VidéoThèque\\Pages\\Users"
+    "\\VidéoThèque\\Pages"
   ],
-  "SelectedNode": "\\VidéoThèque\\Models\\SeedData.cs",
+  "SelectedNode": "\\VidéoThèque\\Pages\\Index.cshtml.cs",
   "PreviewInSolutionExplorer": false
 }

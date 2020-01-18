@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using VidéoThèque.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace VidéoThèque
 {
@@ -33,6 +34,23 @@ namespace VidéoThèque
                     options.UseSqlServer(Configuration.GetConnectionString("VidéoThèqueContext")));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            
+            services.AddAuthentication(options =>
+            {
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(options =>
+            {
+                options.LoginPath = new PathString("/Index");
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
+            });
+
+            services.AddMvc().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AuthorizeFolder("/");
+                options.Conventions.AllowAnonymousToPage("/Index");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +58,7 @@ namespace VidéoThèque
         {
             if (env.IsDevelopment())
             {
+                
                 app.UseDeveloperExceptionPage();
             }
             else
@@ -54,12 +73,14 @@ namespace VidéoThèque
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
             });
+           
         }
     }
 }
