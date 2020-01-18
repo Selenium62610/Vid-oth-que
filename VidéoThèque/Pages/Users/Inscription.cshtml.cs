@@ -42,7 +42,7 @@ namespace VidéoThèque.Pages.Users
             _context.User.Add(User);
             await _context.SaveChangesAsync();
             //Redirection vers la page Privacy 
-            return RedirectToPage("../Privacy");
+            return RedirectToPage("../MovieDisplay");
         }
     }
 }
