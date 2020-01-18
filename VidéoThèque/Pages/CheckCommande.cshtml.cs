@@ -51,6 +51,11 @@ namespace VidéoThèque.Pages
             IQueryable < Commande > CommandeQuery = from m in _context.Commande
                                                     select m;
 
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                CommandeQuery = CommandeQuery.Where(x => x.IDuser.Contains(SearchString));
+            }
+
             //On vérifie que MovieGenre n'est pas null ou vide 
             if (!string.IsNullOrEmpty(MovieGenre))
             {

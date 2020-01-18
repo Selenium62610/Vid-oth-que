@@ -8,10 +8,10 @@
 
 <form>
     <p>
-        Par type: <select asp-for="MovieGenre" asp-items="Model.Utilisateur">
+        Par Film: <select asp-for="MovieGenre" asp-items="Model.Utilisateur">
             <option value="">All</option>
         </select>
-        Titre recherché: <input type="text" asp-for="SearchString" />
+        Par Utilisateur: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filtrer" />
     </p>
 </form>
