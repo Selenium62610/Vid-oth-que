@@ -19,15 +19,12 @@ namespace VidéoThèque.Pages.Movies
         public IndexModel(VidéoThèque.Models.VidéoThèqueContext context)
         {
             _context = context;
-
-            //var DateSortParam = SearchDate == "Date" ? "Younger" : "Older";
-
-            //var Movie = from s in _context.Movie select s;
         }
 
         //Permet la recherche par nom et par Genre
         public IList<Movie> Movie { get;set; }
         [BindProperty(SupportsGet = true)]
+
 
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchString { get; set; }

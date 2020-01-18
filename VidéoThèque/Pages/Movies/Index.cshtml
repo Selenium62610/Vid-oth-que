@@ -15,15 +15,6 @@
         Par type: <select asp-for="MovieGenre" asp-items="Model.Genres">
             <option value="">All</option>
         </select>
-        <!--Par Date de sortie <select type="text" asp-for="SearchDate">
-        <option value="">Sans importance</option>
-        <option value="youngest">Les plus récents</option>
-        <option value="oldest">Les plus Vieux</option>
-    </select>
-    Par location <select type="text" asp-for="SearchLocation">
-        <option value="most">Les plus loués</option>
-        <option value="less">Les moins loués</option>
-    </select>-->
         Titre recherché: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filtrer" />
     </p>
