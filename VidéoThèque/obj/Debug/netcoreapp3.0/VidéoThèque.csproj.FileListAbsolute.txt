@@ -576,7 +576,6 @@ C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\Vidéo
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.csprojAssemblyReference.cache
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\staticwebassets\VidéoThèque.StaticWebAssets.Manifest.cache
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\staticwebassets\VidéoThèque.StaticWebAssets.xml
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.MvcApplicationPartsAssemblyInfo.cs
@@ -588,6 +587,7 @@ C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\Vidéo
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.TagHelpers.input.cache
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.TagHelpers.output.cache
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.RazorCoreGenerate.cache
+C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\CheckCommande.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Error.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\MovieDisplay.cshtml.g.cs
@@ -598,8 +598,11 @@ C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\Vidéo
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Movies\DetailsForClient.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Movies\Edit.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Movies\Index.cshtml.g.cs
+C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Movies\ValidationCommande.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Privacy.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutAccueil.cshtml.g.cs
+C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutAdmin.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\Users\Inscription.cshtml.g.cs
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\_ViewImports.cshtml.g.cs
@@ -610,4 +613,3 @@ C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\Vidéo
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.csproj.CopyComplete
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.dll
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.pdb
-C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\CheckCommande.cshtml.g.cs

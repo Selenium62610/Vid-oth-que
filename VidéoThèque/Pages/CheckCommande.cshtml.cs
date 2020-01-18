@@ -46,7 +46,7 @@ namespace VidéoThèque.Pages
         {
             var commande = from m in _context.Commande select m;
 
-            IQueryable<int> UtilisateurQuery = from m in _context.Commande orderby m.IDmovie select m.IDmovie;
+            IQueryable<string> UtilisateurQuery = from m in _context.Commande orderby m.TitleMovie select m.TitleMovie;
 
             IQueryable < Commande > CommandeQuery = from m in _context.Commande
                                                     select m;
@@ -54,7 +54,7 @@ namespace VidéoThèque.Pages
             //On vérifie que MovieGenre n'est pas null ou vide 
             if (!string.IsNullOrEmpty(MovieGenre))
             {
-                CommandeQuery = CommandeQuery.Where(x => x.IDmovie == Int32.Parse(MovieGenre));
+                CommandeQuery = CommandeQuery.Where(x => x.TitleMovie == MovieGenre);
             }
 
             if (!string.IsNullOrEmpty(SearchString))

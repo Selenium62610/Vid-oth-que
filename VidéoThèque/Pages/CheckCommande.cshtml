@@ -28,6 +28,9 @@
                 @Html.DisplayNameFor(model => model.CommandeList[0].IDmovie)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.CommandeList[0].TitleMovie)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.CommandeList[0].dureeLocation)
             </th>
             <th>
@@ -50,6 +53,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IDmovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleMovie)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dureeLocation)
