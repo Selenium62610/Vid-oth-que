@@ -28,6 +28,11 @@ namespace VidéoThèque.Pages.Movies
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchString { get; set; }
 
+        //Contient le texte de l'utilisateur entrée dans la zone de recherche de date (plus récent ou plus vieux)
+        public string SearchDate { get; set; }
+
+        public string SearchLocation { get; set; }
+
         //Contient la liste des genres
         public SelectList Genres { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -38,27 +43,48 @@ namespace VidéoThèque.Pages.Movies
 
 
         //Parmis tout les films on recherche celui qui contiens le même titre que celui dans la barre de recherche
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
-            //Récupère tout les gens de la liste
+
+            SearchDate = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            SearchLocation = sortOrder == "Date" ? "date_desc" : "Date";
             IQueryable<string> genreQuery = from m in _context.Movie orderby m.Genre select m.Genre;
 
             var movies = from m in _context.Movie select m;
 
+            IQueryable<Movie> MovieQuery = from m in _context.Movie
+                                           select m;
+
             //Si la requête n'est pas nul (SearchString) la requête sur les film est modifié on affiche telle type de film
-            if(!string.IsNullOrEmpty(SearchString)) 
+            if (!string.IsNullOrEmpty(SearchString)) 
             {
-                movies = movies.Where(s => s.Title.Contains(SearchString));
+                MovieQuery = MovieQuery.Where(s => s.Title.Contains(SearchString));
             }
 
             if(!string.IsNullOrEmpty(MovieGenre))
             {
-                movies = movies.Where(x => x.Genre == MovieGenre);
+                MovieQuery = MovieQuery.Where(x => x.Genre == MovieGenre);
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    MovieQuery = MovieQuery.OrderByDescending(m => m.ReleaseDate);
+                    break;
+                case "Date":
+                    MovieQuery = MovieQuery.OrderBy(m => m.NbLocation);
+                    break;
+                case "date_desc":
+                    MovieQuery = MovieQuery.OrderByDescending(m => m.NbLocation);
+                    break;
+                default:
+                    MovieQuery = MovieQuery.OrderBy(m => m.ReleaseDate);
+                    break;
             }
 
             //On affiche la requête si elle est modifié, tout les films sinon.
-            Movie = await movies.ToListAsync();
-        
+            Movie = await MovieQuery.AsNoTracking().ToListAsync();
+
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
         }
     }

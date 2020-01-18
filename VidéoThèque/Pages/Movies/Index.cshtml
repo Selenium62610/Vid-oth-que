@@ -30,7 +30,9 @@
                 @Html.DisplayNameFor(model => model.Movie[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SearchDate">
+                    @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movie[0].Genre)
@@ -47,6 +49,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Movie[0].Synopsis)
             </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SearchLocation">
+                    @Html.DisplayNameFor(model => model.Movie[0].NbLocation)
+                </a>
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -55,39 +62,42 @@
         <!-- Pour chaque items dans la liste de film on affiche leur titre, date, genre et le prix -->
         @foreach (var item in Model.Movie)
         {
-            <tr>
-                <td>
-                    <img src="@Url.Content("~/img/"+item.Image+".PNG")" height="250px" width="200px" alt="Image" />
-                    <!--Mettre à jour ici pour utiliser les noms présent dans la BDD-->
-                </td>
-                <td>    
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Realisateur)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Acteurs)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Synopsis)
-                </td>
-                <td>
-                    <!-- Les routes -->
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Éditer</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Voir les détails</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Supprimer</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <img src="@Url.Content("~/img/"+item.Image+".PNG")" height="250px" width="200px" alt="Image" />
+                <!--Mettre à jour ici pour utiliser les noms présent dans la BDD-->
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Realisateur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acteurs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Synopsis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbLocation)
+            </td>
+            <td>
+                <!-- Les routes -->
+                <a asp-page="./Edit" asp-route-id="@item.ID">Éditer</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Voir les détails</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Supprimer</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
