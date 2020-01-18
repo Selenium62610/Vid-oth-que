@@ -53,6 +53,7 @@ namespace VidéoThèque.Pages
         //Contient le texte de l'utilisateur entrée dans la zone de recherche
         public string SearchString { get; set; }
 
+        public int SearchNumber { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -63,7 +64,6 @@ namespace VidéoThèque.Pages
             IQueryable < Commande > CommandeQuery = from m in _context.Commande
                                                     select m;
 
-            
             //On vérifie que MovieTitre n'est pas null ou vide 
             if (!string.IsNullOrEmpty(MovieTitre))
             {
@@ -83,6 +83,7 @@ namespace VidéoThèque.Pages
             {
                 CommandeQuery = CommandeQuery.Where(x => DateTime.Compare(DateTime.Now, x.dateRetour) > 0);
             }
+
             CommandeList = await CommandeQuery.ToListAsync();
 
             Films = new SelectList(await CommandeQuery.Distinct().ToListAsync());

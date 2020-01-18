@@ -9,13 +9,13 @@
 
 <form>
     <p>
-        Par Location: 
-        <select asp-for="EtatCommande" >
+        Par Location:
+        <select asp-for="EtatCommande">
             <option value="">Tous</option>
             <option value="EnCours">En cours de location</option>
             <option value="Finis">Anciennes locations</option>
         </select>
-        Par Film: 
+        Par Film:
         <select asp-for="MovieTitre" asp-items="Model.Films">
             <option value="">Tous</option>
         </select>

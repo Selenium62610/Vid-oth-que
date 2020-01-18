@@ -41,11 +41,10 @@ namespace VidéoThèque.Pages.Movies
         public string MovieGenre { get; set; }
 
 
-
         //Parmis tout les films on recherche celui qui contiens le même titre que celui dans la barre de recherche
         public async Task OnGetAsync(string sortOrder)
         {
-
+            
             SearchDate = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             SearchLocation = sortOrder == "Date" ? "date_desc" : "Date";
             IQueryable<string> genreQuery = from m in _context.Movie orderby m.Genre select m.Genre;
@@ -54,6 +53,7 @@ namespace VidéoThèque.Pages.Movies
 
             IQueryable<Movie> MovieQuery = from m in _context.Movie
                                            select m;
+
 
             //Si la requête n'est pas nul (SearchString) la requête sur les film est modifié on affiche telle type de film
             if (!string.IsNullOrEmpty(SearchString)) 
@@ -86,6 +86,7 @@ namespace VidéoThèque.Pages.Movies
             Movie = await MovieQuery.AsNoTracking().ToListAsync();
 
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
+
         }
     }
 }
