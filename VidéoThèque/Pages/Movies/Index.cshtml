@@ -19,12 +19,8 @@
         Titre recherché: <input type="text" asp-for="SearchString" />
 
         Top :
-        <select asp-for="NFilm">
-            <option value="">Tous</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="150">150</option>
-        </select>
+        <input type="number" min="0" asp-for="NFilm"/>
+
         <input type="submit" value="Filtrer" />
     </p>
 </form>
@@ -59,9 +55,7 @@
                 @Html.DisplayNameFor(model => model.Movie[0].Synopsis)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.SearchLocation">
-                    @Html.DisplayNameFor(model => model.Movie[0].NbLocation)
-                </a>
+                @Html.DisplayNameFor(model => model.Movie[0].NbLocation)
             </th>
             <th></th>
         </tr>
