@@ -85,7 +85,7 @@ namespace VidéoThèque.Pages
 
             CommandeList = await CommandeQuery.ToListAsync();
 
-            Films = new SelectList(await CommandeQuery.Distinct().ToListAsync());
+            Films = new SelectList(await UtilisateurQuery.Distinct().ToListAsync());
 
             Locations = new SelectList(await CommandeQuery.Distinct().ToListAsync());
         }
