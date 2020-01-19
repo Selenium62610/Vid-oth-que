@@ -5,60 +5,52 @@
     Layout = "~/Pages/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>DetailCommande</h1>
+<h1>Detail de la Commande</h1>
 
 
 <div>
-    <h4>Du film</h4>
+    <h4> Facture </h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Commande.ID)
-        </dt>
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.Commande.ID)
-        </dt>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Commande.IDmovie)
-        </dt>
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.Commande.IDmovie)
-        </dt>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Commande.dureeLocation)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Commande.dureeLocation)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Commande.IDuser)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Commande.IDuser)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Commande.TitleMovie)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Commande.TitleMovie)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Commande.dateLocation)
-        </dt>
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.Commande.dateLocation)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayNameFor(model => model.Commande.prixDuFilm) (en €)
-        </dd>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Commande.prixDuFilm)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Commande.dateRetour)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Commande.dateRetour)
-        </dd>
-    </dl>
+
+    <h1>
+        N° de Commande : @Html.DisplayFor(model => model.Commande.ID)
+    </h1>
+
+    <br />
+    <h5>
+        <b>Identifiant de l'utilisateur : </b> @Html.DisplayFor(model => model.Commande.IDuser)
+    </h5>
+    <br />
+
+    <h5>
+        <b>Référence du film : </b> @Html.DisplayFor(model => model.Commande.IDmovie)
+    </h5>
+    <br />
+
+    <h5>
+        <b>Titre du film : </b> @Html.DisplayFor(model => model.Commande.TitleMovie)
+    </h5>
+    <br />
+
+    <h5>
+        <b>Prix : </b> @Html.DisplayFor(model => model.Commande.prixDuFilm) €
+    </h5>
+    <br />
+
+    <h5>
+        <b>Durée de la location : </b> @Html.DisplayFor(model => model.Commande.dureeLocation) jour(s)
+    </h5>
+    <br />
+
+    <h5>
+        <b>Date de location : </b> @Html.DisplayFor(model => model.Commande.dateLocation)
+    </h5>
+    <br />
+
+    <h5>
+        <b>Date de retour : </b> @Html.DisplayFor(model => model.Commande.dateRetour)
+    </h5>
+    <br />
+    <input type="button" class="btn btn-primary" value="Editer la facture" onclick="window.print();return false;" />
+
 </div>

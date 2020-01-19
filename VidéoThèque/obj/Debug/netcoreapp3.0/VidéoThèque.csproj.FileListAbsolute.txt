@@ -778,3 +778,4 @@ C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\new\Vid-oth-que\Vi
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\new\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.dll
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\new\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\VidéoThèque.pdb
 C:\Users\Edouard\Documents\M2_Progr_Avance\.Net\Vidéothèque\new\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\DetailCommande.cshtml.g.cs
+C:\Users\Bettina\Source\Repos\Vid-oth-que\VidéoThèque\obj\Debug\netcoreapp3.0\Razor\Pages\DetailCommande.cshtml.g.cs
