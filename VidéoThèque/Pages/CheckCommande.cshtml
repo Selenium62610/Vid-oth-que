@@ -74,6 +74,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.price) €
             </td>
+            <td>
+                <!-- Les routes -->
+                <a asp-page="./DetailCommande" asp-route-id="@item.ID">Éditer</a>
+            </td>
         </tr>
         }
 

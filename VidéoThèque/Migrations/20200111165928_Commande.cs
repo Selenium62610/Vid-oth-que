@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+using VidéoThèque.Models;
 
 namespace VidéoThèque.Migrations
 {
@@ -25,6 +27,11 @@ namespace VidéoThèque.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Commande");
+        }
+
+        public static implicit operator Commande(Models.Commande v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

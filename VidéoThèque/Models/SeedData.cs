@@ -24,14 +24,15 @@ namespace VidéoThèque.Models
                 context.Movie.AddRange(
                     new Movie
                     {
-                        Title = "When Harry Met Sally",
-                        ReleaseDate = DateTime.Parse("1989-2-12"),
-                        Genre = "Romantic Comedy",
+                        Title = "Alien, le huitième passager",
+                        ReleaseDate = DateTime.Parse("1979-11-12"),
+                        Genre = "Horreur",
                         Price = 7.99M,
-                        Realisateur = "Test",
-                        Acteurs = "De Niro",
-                        Synopsis = "La rencontre de deux personnes",
+                        Realisateur = "Ridley SCOTT",
+                        Acteurs = "Sigourney Weaver",
+                        Synopsis = "Dans l'espace, personne ne vous entend crier",
                         NbLocation = 2,
+                        Image = "Alien"
                     },
 
                     new Movie
@@ -44,6 +45,7 @@ namespace VidéoThèque.Models
                         Acteurs = "De Niro",
                         Synopsis = "La rencontre de deux personnes",
                         NbLocation = 12,
+                        Image = "Rio"
                     },
 
                     new Movie
